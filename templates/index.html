@@ -1,12 +1,83 @@
 {% extends "base.html" %}
 
-{% block title %}Добро пожаловать{% endblock %}
+{% block title %}Предсказание цены дома{% endblock %}
 
 {% block content %}
-    <h1>Добро пожаловать!</h1>
-    <p>Это простое Flask приложение на русском языке.</p>
-    <div class="info">
-        <p><strong>Flask</strong> - это легковесный веб-фреймворк для Python.</p>
-        <p>Приложение успешно запущено! 🎉</p>
-    </div>
+    <h1>Предсказание цены дома</h1>
+    <form method="POST" action="/" class="prediction-form">
+        <div class="form-group">
+            <label for="area">Площадь (кв.м):</label>
+            <input type="number" id="area" name="area" required min="1" step="1">
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="bedrooms">Спальни:</label>
+                <input type="number" id="bedrooms" name="bedrooms" required min="0" max="10" step="1">
+            </div>
+
+            <div class="form-group">
+                <label for="bathrooms">Ванные комнаты:</label>
+                <input type="number" id="bathrooms" name="bathrooms" required min="0" max="10" step="1">
+            </div>
+
+            <div class="form-group">
+                <label for="stories">Этаж:</label>
+                <input type="number" id="stories" name="stories" required min="1" max="10" step="1">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="furnishingstatus">Меблировка:</label>
+            <select id="furnishingstatus" name="furnishingstatus" required>
+                <option value="">Выберите...</option>
+                <option value="furnished">Меблированная</option>
+                <option value="semi-furnished">Частично меблированная</option>
+                <option value="not-furnished">Немеблированная</option>
+            </select>
+        </div>
+
+        <div class="binary-group">
+            <h3>Дополнительные характеристики:</h3>
+            
+            <div class="checkbox-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" name="mainroad" value="1">
+                    <span>Главная дорога</span>
+                </label>
+
+                <label class="checkbox-label">
+                    <input type="checkbox" name="guestroom" value="1">
+                    <span>Гостевая комната</span>
+                </label>
+
+                <label class="checkbox-label">
+                    <input type="checkbox" name="basement" value="1">
+                    <span>Подвал</span>
+                </label>
+
+                <label class="checkbox-label">
+                    <input type="checkbox" name="hotwaterheating" value="1">
+                    <span>Горячее водоснабжение</span>
+                </label>
+
+                <label class="checkbox-label">
+                    <input type="checkbox" name="airconditioning" value="1">
+                    <span>Кондиционер</span>
+                </label>
+
+                <label class="checkbox-label">
+                    <input type="checkbox" name="parking" value="1">
+                    <span>Парковка</span>
+                </label>
+
+                <label class="checkbox-label">
+                    <input type="checkbox" name="prefarea" value="1">
+                    <span>Престижный район</span>
+                </label>
+            </div>
+        </div>
+
+        <button type="submit" class="submit-btn">Предсказать цену</button>
+    </form>
 {% endblock %}
