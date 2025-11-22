@@ -289,6 +289,34 @@ h1 {
     transform: translateY(-1px);
 }
 
+.prediction-result {
+    margin-top: 32px;
+    animation: slideUp 0.6s ease-out;
+}
+
+.result-content {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.result-content h2 {
+    color: white;
+    font-size: 1.8em;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.prediction-value {
+    color: white;
+    font-size: 3em;
+    font-weight: 700;
+    margin: 0;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 24px 20px;
@@ -318,5 +346,17 @@ h1 {
     .header-section {
         margin-bottom: 32px;
         padding-bottom: 20px;
+    }
+
+    .result-content {
+        padding: 24px;
+    }
+
+    .result-content h2 {
+        font-size: 1.5em;
+    }
+
+    .prediction-value {
+        font-size: 2em;
     }
 }
