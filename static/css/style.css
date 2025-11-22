@@ -35,7 +35,7 @@ body::before {
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(10px);
     border-radius: 30px;
-    padding: 50px;
+    padding: 40px;
     box-shadow: 
         0 20px 60px rgba(0, 0, 0, 0.3),
         0 0 0 1px rgba(255, 255, 255, 0.5) inset;
@@ -61,14 +61,13 @@ body::before {
 .header-section {
     text-align: center;
     margin-bottom: 40px;
-    padding-bottom: 30px;
+    padding-bottom: 24px;
     border-bottom: 2px solid #f0f0f0;
 }
 
-
 h1 {
     color: #2d3748;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
     font-size: 2.8em;
     font-weight: 700;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -81,18 +80,19 @@ h1 {
     color: #718096;
     font-size: 1.1em;
     font-weight: 400;
+    margin: 0;
 }
 
 .prediction-form {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 32px;
 }
 
 .form-section {
     background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
     border-radius: 20px;
-    padding: 30px;
+    padding: 32px;
     border: 1px solid #e2e8f0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s, box-shadow 0.3s;
@@ -104,8 +104,8 @@ h1 {
 }
 
 .section-header {
-    margin-bottom: 25px;
-    padding-bottom: 15px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
     border-bottom: 2px solid #e2e8f0;
 }
 
@@ -119,8 +119,8 @@ h1 {
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
+    gap: 12px;
+    margin-bottom: 24px;
 }
 
 .form-group:last-child {
@@ -131,6 +131,7 @@ h1 {
     color: #4a5568;
     font-weight: 600;
     font-size: 1em;
+    margin: 0;
 }
 
 .input-wrapper,
@@ -141,7 +142,7 @@ h1 {
 .form-group input[type="number"],
 .form-group select {
     width: 100%;
-    padding: 14px 16px;
+    padding: 16px;
     border: 2px solid #e2e8f0;
     border-radius: 12px;
     font-size: 1em;
@@ -165,14 +166,15 @@ h1 {
 
 .form-row {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 24px;
+    row-gap: 16px;
 }
 
 .checkbox-group {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
+    gap: 16px;
 }
 
 .checkbox-card {
@@ -218,6 +220,7 @@ h1 {
     z-index: 1;
     position: relative;
     transition: color 0.3s;
+    margin: 0;
 }
 
 .checkbox-card input[type="checkbox"]:checked + .checkbox-content {
@@ -235,7 +238,6 @@ h1 {
     font-weight: 600;
 }
 
-
 .checkbox-card:hover .checkbox-content {
     border-color: #667eea;
     transform: translateY(-2px);
@@ -243,8 +245,8 @@ h1 {
 }
 
 .submit-btn {
-    margin-top: 10px;
-    padding: 18px 40px;
+    margin-top: 0;
+    padding: 20px 40px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     border: none;
@@ -287,26 +289,34 @@ h1 {
     transform: translateY(-1px);
 }
 
-
 @media (max-width: 768px) {
     .container {
-        padding: 30px 20px;
+        padding: 24px 20px;
         border-radius: 20px;
     }
 
     .form-row {
         grid-template-columns: 1fr;
+        column-gap: 24px;
+        row-gap: 16px;
     }
     
     .checkbox-group {
         grid-template-columns: 1fr;
+        gap: 16px;
     }
     
     h1 {
         font-size: 2em;
+        margin-bottom: 16px;
     }
 
     .form-section {
-        padding: 20px;
+        padding: 24px;
+    }
+
+    .header-section {
+        margin-bottom: 32px;
+        padding-bottom: 20px;
     }
 }
