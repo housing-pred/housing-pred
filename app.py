@@ -9,12 +9,12 @@ def index():
         bedrooms = request.form.get('bedrooms')
         bathrooms = request.form.get('bathrooms')
         stories = request.form.get('stories')
+        parking = request.form.get('parking')
         mainroad = 1 if request.form.get('mainroad') else 0
         guestroom = 1 if request.form.get('guestroom') else 0
         basement = 1 if request.form.get('basement') else 0
         hotwaterheating = 1 if request.form.get('hotwaterheating') else 0
         airconditioning = 1 if request.form.get('airconditioning') else 0
-        parking = 1 if request.form.get('parking') else 0
         prefarea = 1 if request.form.get('prefarea') else 0
         furnishingstatus = request.form.get('furnishingstatus')
         
@@ -23,12 +23,12 @@ def index():
             'bedrooms': bedrooms,
             'bathrooms': bathrooms,
             'stories': stories,
+            'parking': parking,
             'mainroad': mainroad,
             'guestroom': guestroom,
             'basement': basement,
             'hotwaterheating': hotwaterheating,
             'airconditioning': airconditioning,
-            'parking': parking,
             'prefarea': prefarea,
             'furnishingstatus': furnishingstatus
         }

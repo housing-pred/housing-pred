@@ -3,81 +3,131 @@
 {% block title %}Предсказание цены дома{% endblock %}
 
 {% block content %}
-    <h1>Предсказание цены дома</h1>
+    <div class="header-section">
+        <h1>Предсказание цены дома</h1>
+        <p class="subtitle">Заполните форму ниже для получения оценки стоимости недвижимости</p>
+    </div>
+
     <form method="POST" action="/" class="prediction-form">
-        <div class="form-group">
-            <label for="area">Площадь (кв.м):</label>
-            <input type="number" id="area" name="area" required min="1" step="1">
-        </div>
-
-        <div class="form-row">
+        <div class="form-section">
+            <div class="section-header">
+                <h2>Основные параметры</h2>
+            </div>
+            
             <div class="form-group">
-                <label for="bedrooms">Спальни:</label>
-                <input type="number" id="bedrooms" name="bedrooms" required min="0" max="10" step="1">
+                <label for="area">
+                    Площадь (кв.м)
+                </label>
+                <div class="input-wrapper">
+                    <input type="number" id="area" name="area" required min="1" step="1" placeholder="Введите площадь">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="bedrooms">
+                        Спальни
+                    </label>
+                    <div class="input-wrapper">
+                        <input type="number" id="bedrooms" name="bedrooms" required min="0" max="10" step="1" placeholder="0">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="bathrooms">
+                        Ванные
+                    </label>
+                    <div class="input-wrapper">
+                        <input type="number" id="bathrooms" name="bathrooms" required min="0" max="10" step="1" placeholder="0">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="stories">
+                        Этаж
+                    </label>
+                    <div class="input-wrapper">
+                        <input type="number" id="stories" name="stories" required min="1" max="10" step="1" placeholder="1">
+                    </div>
+                </div>
             </div>
 
             <div class="form-group">
-                <label for="bathrooms">Ванные комнаты:</label>
-                <input type="number" id="bathrooms" name="bathrooms" required min="0" max="10" step="1">
+                <label for="parking">
+                    Парковка (количество мест)
+                </label>
+                <div class="input-wrapper">
+                    <input type="number" id="parking" name="parking" required min="0" step="1" placeholder="0">
+                </div>
             </div>
 
             <div class="form-group">
-                <label for="stories">Этаж:</label>
-                <input type="number" id="stories" name="stories" required min="1" max="10" step="1">
+                <label for="furnishingstatus">
+                    Меблировка
+                </label>
+                <div class="select-wrapper">
+                    <select id="furnishingstatus" name="furnishingstatus" required>
+                        <option value="">Выберите вариант...</option>
+                        <option value="furnished">Меблированная</option>
+                        <option value="semi-furnished">Частично меблированная</option>
+                        <option value="not-furnished">Немеблированная</option>
+                    </select>
+                </div>
             </div>
         </div>
 
-        <div class="form-group">
-            <label for="furnishingstatus">Меблировка:</label>
-            <select id="furnishingstatus" name="furnishingstatus" required>
-                <option value="">Выберите...</option>
-                <option value="furnished">Меблированная</option>
-                <option value="semi-furnished">Частично меблированная</option>
-                <option value="not-furnished">Немеблированная</option>
-            </select>
-        </div>
-
-        <div class="binary-group">
-            <h3>Дополнительные характеристики:</h3>
+        <div class="form-section">
+            <div class="section-header">
+                <h2>Дополнительные характеристики</h2>
+            </div>
             
             <div class="checkbox-group">
-                <label class="checkbox-label">
+                <label class="checkbox-card">
                     <input type="checkbox" name="mainroad" value="1">
-                    <span>Главная дорога</span>
+                    <div class="checkbox-content">
+                        <span class="checkbox-text">Главная дорога</span>
+                    </div>
                 </label>
 
-                <label class="checkbox-label">
+                <label class="checkbox-card">
                     <input type="checkbox" name="guestroom" value="1">
-                    <span>Гостевая комната</span>
+                    <div class="checkbox-content">
+                        <span class="checkbox-text">Гостевая комната</span>
+                    </div>
                 </label>
 
-                <label class="checkbox-label">
+                <label class="checkbox-card">
                     <input type="checkbox" name="basement" value="1">
-                    <span>Подвал</span>
+                    <div class="checkbox-content">
+                        <span class="checkbox-text">Подвал</span>
+                    </div>
                 </label>
 
-                <label class="checkbox-label">
+                <label class="checkbox-card">
                     <input type="checkbox" name="hotwaterheating" value="1">
-                    <span>Горячее водоснабжение</span>
+                    <div class="checkbox-content">
+                        <span class="checkbox-text">Горячее водоснабжение</span>
+                    </div>
                 </label>
 
-                <label class="checkbox-label">
+                <label class="checkbox-card">
                     <input type="checkbox" name="airconditioning" value="1">
-                    <span>Кондиционер</span>
+                    <div class="checkbox-content">
+                        <span class="checkbox-text">Кондиционер</span>
+                    </div>
                 </label>
 
-                <label class="checkbox-label">
-                    <input type="checkbox" name="parking" value="1">
-                    <span>Парковка</span>
-                </label>
-
-                <label class="checkbox-label">
+                <label class="checkbox-card">
                     <input type="checkbox" name="prefarea" value="1">
-                    <span>Престижный район</span>
+                    <div class="checkbox-content">
+                        <span class="checkbox-text">Престижный район</span>
+                    </div>
                 </label>
             </div>
         </div>
 
-        <button type="submit" class="submit-btn">Предсказать цену</button>
+        <button type="submit" class="submit-btn">
+            Предсказать цену
+        </button>
     </form>
 {% endblock %}
