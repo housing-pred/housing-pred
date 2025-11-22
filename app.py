@@ -17,8 +17,11 @@ def prepare_input_data(form_data):
         'furnished': 2
     }
     
+    area_sq_meters = float(form_data.get('area', 0))
+    area_sq_feet = area_sq_meters * 10.7639
+    
     data = {
-        'area': [int(form_data.get('area', 0))],
+        'area': [round(area_sq_feet, 2)],
         'bedrooms': [int(form_data.get('bedrooms', 0))],
         'bathrooms': [int(form_data.get('bathrooms', 0))],
         'stories': [int(form_data.get('stories', 1))],
